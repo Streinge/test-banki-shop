@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', action: 'App\Http\Controllers\MainController@getHomePage');
+
+Route::post('/check', action: 'App\Http\Controllers\MainController@checkFileNames');
+
+/*Route::get('about', function () {
+    return view('about');
+});*/
