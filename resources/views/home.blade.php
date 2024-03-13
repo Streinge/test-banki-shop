@@ -16,7 +16,7 @@
                 </label>
                 <div class="input-file-list"></div>
             </div>
-            <button type="submit" class="btn btn-primary" style="margin: 10px auto;">Загрузить</button>
+            <button type="submit" name="upload" class="btn btn-primary" style="margin: 10px auto;">Загрузить</button>
         </form>
     </div>
     <div style="display:flex; justify-content:center; align-items:center; height:20vh;">
