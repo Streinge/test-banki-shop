@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', action: 'App\Http\Controllers\MainController@getHomePage')->name('home');
 
-Route::post('/check', action: 'App\Http\Controllers\MainController@storedFiles');
+Route::get('/upload', action: 'App\Http\Controllers\MainController@getUploadPage')->name('upload');
 
-/*Route::get('about', function () {
-    return view('about');
-});*/
+Route::post('/upload', action: 'App\Http\Controllers\MainController@storedFiles');
+
+Route::get('/info', action: 'App\Http\Controllers\MainController@displaysInfo')->name('info');

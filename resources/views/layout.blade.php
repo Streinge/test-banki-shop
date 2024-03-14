@@ -11,19 +11,25 @@
     <div style="display:flex; justify-content:center; align-items:center; height:10vh;">
         <h4>Тест banki.shop (прототип хостинга изображений)</h4>
     </div>
+    <div style="display:flex; justify-content:center; align-items:center; height:1vh;">
+      <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" style="font-size: 20px;" href="{{ route('upload') }}">Загрузить файлы</a>
+          <a class="p-2 text-dark" style="font-size: 20px;" href="{{ route('info') }}">Информация о файлах</a>
+      </nav>
+    </div>
     <section>
         <hr class="hr-horizontal-gradient">
     </section>
     <style>
         .hr-horizontal-gradient {
-	    margin: 0px 0;
+	    margin: 50px 0;
 	    padding: 0;
 	    height: 4px;
 	    border: none;
 	    background: linear-gradient(45deg, #333, #ddd);
         }
     </style>
-
+@include('inc.messages')
 @yield('mainContent')
 
 </body>
