@@ -3,16 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ContactRequest;
 use App\Models\ContactModel as ModelsContactModel;
 
 class MainController extends Controller
 {
-    public function submit($request)
-    {
-
-    }
-
     public function getHomePage()
     {
         return view(view: 'home');
@@ -68,7 +62,7 @@ class MainController extends Controller
             $listFileNames[] = $newName;
 
             # загружаю файл в папку
-            $path = $image->storeAs('pictures', $newName, 'public');
+            $path1 = $image->storeAs('pictures', $newName, 'public');
 
             # делаю запись в БД
             $image = new ModelsContactModel();
