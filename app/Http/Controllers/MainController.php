@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactModel as ModelsContactModel;
+use Intervention\Image\Facades\Image;
 
 class MainController extends Controller
 {
@@ -63,6 +64,10 @@ class MainController extends Controller
 
             # загружаю файл в папку
             $path1 = $image->storeAs('pictures', $newName, 'public');
+
+            $imageNew = Image::make($image);
+            $thumbnail = $imageNew->fit(100, 100);
+            $thumbnail->save('public/storage/thumbnails/' . $newName);
 
             # делаю запись в БД
             $image = new ModelsContactModel();
