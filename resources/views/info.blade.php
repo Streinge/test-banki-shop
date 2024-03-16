@@ -7,6 +7,8 @@
     <thead>
         <tr>
             <th>Имя файла</th>
+            <th>Превью</th>
+            <th>Оригинал</th>
             <th>Дата создания</th>
         </tr>
     </thead>
@@ -14,7 +16,8 @@
         @foreach($data as $item)
         <tr>
             <td>{{ $item->filename }}</td>
-            <td><img src="{{ asset(public/thumbnails/.$item->filename) }}"></td>
+            <td><img src="{{ asset('/thumbnail/' . $item->filename) }}"></td>
+            <td><a href="{{ asset('storage/pictures/' . $item->filename) }}"><input type="button" value="Просмотр"></td>
             <td>{{ $item->date }}</td>
         </tr>
         @endforeach

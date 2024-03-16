@@ -66,8 +66,8 @@ class MainController extends Controller
             $path1 = $image->storeAs('pictures', $newName, 'public');
 
             $imageNew = Image::make($image);
-            $thumbnail = $imageNew->fit(100, 100);
-            $thumbnail->save('public/storage/thumbnails/' . $newName);
+            $thumbnail = $imageNew->fit(70, 70);
+            $thumbnail->save("thumbnail/" . $newName);
 
             # делаю запись в БД
             $image = new ModelsContactModel();
