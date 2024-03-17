@@ -82,7 +82,7 @@ class MainController extends Controller
     public function displaysInfo($column, $order)
     {
         $contact = new ModelsContactModel();
-        return view('info', ['data' => $contact->orderBy($column, $order)->get()]);
+        return view('images', ['data' => $contact->orderBy($column, $order)->get()]);
     }
 
     public function downloadsImage($filename)
@@ -101,4 +101,5 @@ class MainController extends Controller
 
         return response()->download("archive/" . $zipFileName);
     }
+
 }
