@@ -21,3 +21,5 @@ Route::get('/upload', action: 'App\Http\Controllers\MainController@getUploadPage
 Route::post('/upload', action: 'App\Http\Controllers\MainController@storedFiles');
 
 Route::get('/info/{column}/{order}', action: 'App\Http\Controllers\MainController@displaysInfo')->name('info');
+
+Route::get('/download/{filename}', action: 'App\Http\Controllers\MainController@downloadsImage')->name('download');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ContactModel as ModelsContactModel;
 use Intervention\Image\Facades\Image;
+use ZipArchive;
 
 class MainController extends Controller
 {
@@ -82,5 +83,22 @@ class MainController extends Controller
     {
         $contact = new ModelsContactModel();
         return view('info', ['data' => $contact->orderBy($column, $order)->get()]);
+    }
+
+    public function downloadsImage($filename)
+    {
+        $zipFileName = pathinfo($filename, PATHINFO_FILENAME) . ".zip";
+
+        $path = public_path('storage/pictures/' . $filename);
+        $zip = new ZipArchive();
+
+        if (!file_exists("archive/" . $zipFileName)) {
+            $zip->open("archive/" . $zipFileName, ZIPARCHIVE::CREATE);
+            $path = public_path('storage/pictures/' . $filename);
+            $zip->addFile($path);
+            $zip->close();
+        }
+
+        return response()->download("archive/" . $zipFileName);
     }
 }
