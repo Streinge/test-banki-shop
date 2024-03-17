@@ -78,8 +78,9 @@ class MainController extends Controller
         return redirect()->route('home')->with('success', 'Файлы успешно загружены');
     }
 
-    public function displaysInfo()
+    public function displaysInfo($column, $order)
     {
-        return view('info', ['data' => ModelsContactModel::all()]);
+        $contact = new ModelsContactModel();
+        return view('info', ['data' => $contact->orderBy($column, $order)->get()]);
     }
 }
