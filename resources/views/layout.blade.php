@@ -13,8 +13,8 @@
     </div>
     <div style="display:flex; justify-content:center; align-items:center; height:1vh;">
       <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-dark" style="font-size: 20px;" href="{{ route('upload') }}">Загрузить файлы</a>
-          <a class="p-2 text-dark" style="font-size: 20px;" href="{{ route('info') }}">Информация о файлах</a>
+          <a class="p-2 text-dark" style="font-size: 20px;" href="{{ route('upload') }}"><input type="button" value="Загрузить файлы"></a>
+          <a class="p-2 text-dark" style="font-size: 20px;" href="{{ route('info') }}"><input type="button" value="Информация о файлах"></a>
       </nav>
     </div>
     <section>
