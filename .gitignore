@@ -19,3 +19,6 @@ yarn-error.log
 /.vscode
 /public/thumbnail/
 /public/archive/
+/public/*.jpg
+/public/*.jpeg
+/public/*.png
