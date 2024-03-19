@@ -101,6 +101,7 @@ class MainController extends Controller
             $zip->close();
         }
 
-        return response()->download("archive/" . $zipFileName);
+        $downLoadPath = public_path('archive/' . $zipFileName);
+        return response()->download($downLoadPath);
     }
 }
