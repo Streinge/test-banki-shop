@@ -68,7 +68,8 @@ class MainController extends Controller
 
             $imageNew = Image::make($image);
             $thumbnail = $imageNew->fit(70, 70);
-            $thumbnail->save($newName);
+            $path = public_path('thumbnail/' . $newName);
+            $thumbnail->save($path);
             //$thumbnail->save("thumbnail/" . $newName);
 
             # делаю запись в БД
@@ -102,5 +103,4 @@ class MainController extends Controller
 
         return response()->download("archive/" . $zipFileName);
     }
-
 }
