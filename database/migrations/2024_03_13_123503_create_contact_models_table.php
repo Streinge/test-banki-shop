@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('contact_models', function (Blueprint $table) {
             $table->id();
             $table->string(column: 'filename');
-            $table->dateTime('date');
+            $table->dateTime('date')->default('');
             $table->timestamps();
         });
     }
