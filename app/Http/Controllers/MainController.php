@@ -68,7 +68,8 @@ class MainController extends Controller
 
             $imageNew = Image::make($image);
             $thumbnail = $imageNew->fit(70, 70);
-            $thumbnail->save("thumbnail/" . $newName);
+            $thumbnail->save($newName);
+            //$thumbnail->save("thumbnail/" . $newName);
 
             # делаю запись в БД
             $image = new ModelsContactModel();
