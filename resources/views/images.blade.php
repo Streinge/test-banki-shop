@@ -13,8 +13,8 @@
             </th>
             <th>
                 <p>Дата создания</p>
-                <a href="{{ route('images', ['date', 'asc']) }}"><img style="margin-left: 10px; margin-right: 10px" src="/icons/asc26.png"></a>
-                <a href="{{ route('images', ['date', 'desc']) }}"><img style="margin-left: 10px; margin-right: 10px" src="/icons/desc26.png"></a>
+                <a href="{{ route('images', ['date', 'asc']) }}"><img style="margin-left: 10px; margin-right: 10px" src="{{ asset('/icons/asc26.png') }}"></a>
+                <a href="{{ route('images', ['date', 'desc']) }}"><img style="margin-left: 10px; margin-right: 10px" src="{{ asset('/icons/desc26.png') }}"></a>
             </th>
             <th>Превью</th>
             <th>Оригинал</th>
